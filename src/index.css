@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "@heroui/styles"; 
+
+@theme {
+  --color-primary: #0E1226;
+  --color-secondary: #E6B450;
+}
+
+  body{
+    background-color: #E5E7ED;
+  }
+
+.active{
+  background-color: var(--color-secondary);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--color-primary);
+}
+
+.active i{
+  color: var(--color-primary);
+}
+
+.sidebar-link .active{
+  background-color: var(--color-primary);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.sidebar-link .active i{
+  color: white;
+}
