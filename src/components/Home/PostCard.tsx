@@ -15,10 +15,11 @@ export default function PostCard({ postData , variant }: PostCardProps) {
 	return (
 		<div className="bg-white shadow-md rounded-xl p-3 sm:p-4 space-y-3 sm:space-y-6">
 			<div className="card-header flex items-center justify-between gap-2">
+				<Link to={`/profile/${postData.user._id}`} className="shrink-0">
 				<div className="flex items-center gap-2 sm:gap-3 min-w-0">
-					<Link to={`/profile/${postData.user._id}`} className="shrink-0">
+					
 					<img src={postData.user.photo} alt={postData.user.name} className="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" />
-					</Link>
+					
 					<div className="min-w-0">
 						<h4 className="text-sm sm:text-base font-bold text-primary truncate">{postData.user.name}</h4>
 						<p className="text-xs sm:text-sm text-gray-500">
@@ -30,6 +31,7 @@ export default function PostCard({ postData , variant }: PostCardProps) {
 						</p>
 					</div>
 				</div>
+				</Link>
 				<DropDownMenu PostId={postData._id} OwnerId={postData.user._id} body={postData.body} image={postData.image} />
 			</div>
 			<div className="card-info space-y-3 sm:space-y-4">
@@ -76,7 +78,7 @@ export default function PostCard({ postData , variant }: PostCardProps) {
 			</div>
 			{variant !== "details" && postData.topComment && (
 				<div className="top-comment flex items-start justify-between gap-2 bg-gray-100 px-3 sm:px-4 py-2.5 sm:py-3 rounded-2xl">
-					<div className="flex items-start sm:items-center gap-2 sm:gap-3 min-w-0">
+					<div className="flex items-start gap-2 sm:gap-3 min-w-0">
 						<img src={postData.topComment.commentCreator.photo} className="w-8 h-8 sm:w-10 sm:h-10 shrink-0 rounded-full object-cover" alt={postData.topComment.commentCreator.name} />
 						<div className="space-y-1 sm:space-y-2 min-w-0">
 							<div className="flex flex-wrap items-center gap-x-2">

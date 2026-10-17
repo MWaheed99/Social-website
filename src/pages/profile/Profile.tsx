@@ -12,7 +12,7 @@ export default function Profile() {
 
   const  {token} = useAuth();
   
- function getMyProfileData() {
+ function getUserProfileData() {
 
 
       return  axios.get(
@@ -24,8 +24,8 @@ export default function Profile() {
         })
   }
   const {data , isLoading , isError , error } = useQuery({
-      queryKey : ["profileData"],
-      queryFn : getMyProfileData,
+      queryKey : ["userProfile", id],
+      queryFn : getUserProfileData,
     });
   
     if(isLoading){
