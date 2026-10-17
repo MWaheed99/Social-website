@@ -9,7 +9,7 @@ import ProtectedRouts from "../components/ProtectedRouts/ProtectedRouts";
 import Notifications from "../pages/notifications/Notifications";
 import PostDetails from "../pages/postDetails/PostDetails";
 import NotFound from "../pages/notFound/NotFound";
-import Setting from "../pages/setting/Setting";
+import ChangePassword from "../pages/ChangePassword/ChangePassword";
 
 export const router = createBrowserRouter([
 	{
@@ -46,16 +46,16 @@ export const router = createBrowserRouter([
 						element: <Home />,
 					},
 					{
-						path: "profile",
+						path: "profile/:id",
 						element: <Profile />,
 					},
-					{
-						path: "notifications",
-						element: <Notifications />,
-					},
+					// {
+					// 	path: "notifications",
+					// 	element: <Notifications />,
+					// },
           {
             path: "setting",
-            element: <Setting />,
+            element: <ChangePassword />,
           },
 					{
 						path: "post/:id",

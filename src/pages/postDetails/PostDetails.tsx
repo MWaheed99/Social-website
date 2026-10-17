@@ -1,6 +1,9 @@
+import SinglePost from "../../components/SinglePost/SinglePost";
 
 export default function PostDetails() {
   return (
-    <div>PostDetails</div>
+    <section className="">
+      <SinglePost />
+    </section>
   )
 }

@@ -12,7 +12,7 @@ const Friends = [
 
 export default function RightSidebar() {
 	return (
-		<section className="w-[25%] bg-white shadow-md rounded-xl p-4">
+		<section className="sticky top-22 h-fit bg-white shadow-md rounded-xl p-4">
 			<h3 className="text-xl font-bold text-primary mb-8">Suggested for you</h3>
 			{Friends.map((friend, index) => (
 				<div key={index} className="flex items-center justify-between gap-3 mt-3">
