@@ -50,6 +50,7 @@ export default function CreateComment({ id }: { id: string }) {
 	function onChangePhoto() {
 		if (ImgRef.current) {
 			const file = ImgRef.current.files?.[0];
+			if (!file) return;
 			setPostImage(file);
 			setPreviewImage(URL.createObjectURL(file));
 			setValue("image", file, { shouldValidate: true });

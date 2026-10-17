@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import profileImage from "../../assets/avatar-4.jpg";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useAuth } from "../../Context/AuthContext";

@@ -3,23 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import axios, { isAxiosError } from "axios";
 import { useQuery } from "@tanstack/react-query";
-const links = [
-	{
-		path: "/",
-		name: "Home",
-		icon: "fa-solid fa-house",
-	},
-	{
-		path: "/profile",
-		name: "Profile",
-		icon: "fa-solid fa-user",
-	},
-	{
-		path: "/notifications",
-		name: "Notifications",
-		icon: "fa-solid fa-bell",
-	},
-];
+
 export default function Navbar() {
 const  {token, updateToken} = useAuth();
 const navigation = useNavigate();;

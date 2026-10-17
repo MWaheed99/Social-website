@@ -6,7 +6,6 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/home/Home";
 import Profile from "../pages/profile/Profile";
 import ProtectedRouts from "../components/ProtectedRouts/ProtectedRouts";
-import Notifications from "../pages/notifications/Notifications";
 import PostDetails from "../pages/postDetails/PostDetails";
 import NotFound from "../pages/notFound/NotFound";
 import ChangePassword from "../pages/ChangePassword/ChangePassword";

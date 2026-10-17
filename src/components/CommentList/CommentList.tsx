@@ -3,7 +3,6 @@ import { useAuth } from "../../Context/AuthContext";
 import { useQuery } from "@tanstack/react-query";
 import Comment from "./Comment";
 import type { PostComment } from "../../interfaces/Post";
-import { Button } from "@heroui/react";
 
 interface Comment {
   id: string;
@@ -21,7 +20,7 @@ export default function CommentList({id , isDetails }:Comment) {
     })
   }
 
-  const {data , isLoading , isError , error} =  useQuery({
+  const {data , isLoading  , error} =  useQuery({
       queryKey : ["comments" , id],
       queryFn : getAllComments,
     })
