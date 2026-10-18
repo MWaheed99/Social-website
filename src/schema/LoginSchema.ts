@@ -4,7 +4,12 @@ export const LoginSchema = z.object({
   email: z.string()
   .email({ message: "Invalid email address" }),
   password: z.string()
-  .regex(/^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[a-z]).{6,20}$/, { message: "Password must contain at least one uppercase letter, one lowercase letter, one number and one special character" }),
+    .min(8, "Password must be at least 8 characters")
+    .max(20, "Password must be at most 20 characters")
+    .regex(/[A-Z]/, "Must contain an uppercase letter")
+    .regex(/[a-z]/, "Must contain a lowercase letter")
+    .regex(/[0-9]/, "Must contain a number")
+    .regex(/[!@#$%^&*]/, "Must contain a special character (!@#$%^&*)"),
 })
 
 

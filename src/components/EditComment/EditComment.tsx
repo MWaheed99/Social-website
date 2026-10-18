@@ -87,6 +87,8 @@ export default function EditComment({ postId, commentId, content = "", image = "
 		mutationFn: onSubmit,
 		onSuccess: function (data) {
 			queryClient.invalidateQueries({ queryKey: ["comments", postId] });
+			queryClient.invalidateQueries({ queryKey: ["postDetails", postId] });
+			queryClient.invalidateQueries({ queryKey: ["profilePosts"] });
 			queryClient.invalidateQueries({ queryKey: ["posts"] }); // top comment on the home page
 			toast.success(data.data.message);
 			onClose();

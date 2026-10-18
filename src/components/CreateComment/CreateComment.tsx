@@ -7,7 +7,13 @@ import axios, { isAxiosError } from "axios";
 import { useAuth } from "../../Context/AuthContext";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createAddCommentSchema, type CreateAddCommentFormValues } from "../../schema/CreateAddCommentSchema";
-export default function CreateComment({ id }: { id: string }) {
+
+interface CreateCommentProps {
+	id: string;
+	closeComment?: () => void; 
+}
+
+export default function CreateComment({ id , closeComment }: CreateCommentProps) {
 	const queryClient = useQueryClient();
 	const { token } = useAuth();
 	const [PreviewImage, setPreviewImage] = useState<string>("");
@@ -107,6 +113,7 @@ export default function CreateComment({ id }: { id: string }) {
 			queryClient.invalidateQueries({ queryKey: ["profilePosts"] }); // نفس الكلام في صفحة البروفايل
 			toast.success(data.data.message);
 			cancelPost();
+			closeComment?.();
 		},
 		onError: function (error) {
 			if (isAxiosError(error)) {

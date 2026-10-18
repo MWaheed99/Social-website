@@ -100,7 +100,7 @@ export default function PostCard({ postData , variant }: PostCardProps) {
 			)}
 			<CommentList id={postData._id} isDetails={variant === "details"}/>
 
-			{showComment && <CreateComment id={postData._id} />}
+			{showComment && <CreateComment id={postData._id} closeComment={() => setShowComment(false)}/>}
 		</div>
 	);
 }
